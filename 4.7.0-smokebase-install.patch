@@ -1,0 +1,12 @@
+--- origsrc/smokegen-4.7.0/smokebase/CMakeLists.txt	2011-05-20 15:33:31.000000000 -0500
++++ src/smokegen-4.7.0/smokebase/CMakeLists.txt	2011-07-29 04:14:30.512164400 -0500
+@@ -18,5 +18,8 @@ macro_write_basic_cmake_version_file(
+     ${SMOKE_VERSION_PATCH}
+ )
+ 
+-install(TARGETS smokebase DESTINATION ${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX})
++install(TARGETS smokebase
++    LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX}
++    RUNTIME DESTINATION bin
++    ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX})
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/SmokeVersionConfig.cmake DESTINATION ${CMAKE_INSTALL_PREFIX}/share/smoke/cmake)
