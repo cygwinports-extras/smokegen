@@ -8,7 +8,8 @@ PATCH_URI="
 "
 
 PKG_NAMES="smokegen smokegen-devel libsmokebase3 libsmokebase-devel"
-smokegen_CONTENTS="usr/bin/cygcppparser* usr/bin/smoke*.exe usr/lib/smokegen/ usr/share/doc/"
+smokegen_CONTENTS="usr/bin/cygcppparser* usr/bin/smoke*.exe usr/lib/smokegen/
+                   usr/share/doc/ usr/share/smokegen/"
 smokegen_devel_CONTENTS="usr/include/smokegen/ usr/lib/libsmokegen.*"
 libsmokebase3_CONTENTS="usr/bin/cygsmokebase-3.dll"
 libsmokebase_devel_CONTENTS="usr/include/smoke.h usr/lib/libsmokebase.* usr/share/smoke/"
