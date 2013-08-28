@@ -1,5 +1,0 @@
-category: KDE
-requires: libsmokebase3
-external-source: smokegen
-sdesc: "SMOKE base API (development)"
-ldesc: "Language bindings generator for Qt and KDE"

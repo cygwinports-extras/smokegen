@@ -1,5 +1,0 @@
-category: KDE
-requires: smokegen libQtCore4-devel libQtXml4-devel libsmokebase-devel
-external-source: smokegen
-sdesc: "SMOKE API generator (plugin development)"
-ldesc: "Language bindings generator for Qt and KDE"

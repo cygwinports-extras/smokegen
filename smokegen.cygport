@@ -1,14 +1,25 @@
 inherit kde4
 
+NAME="smokegen"
+VERSION=4.10.5
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="SMOKE API generator"
+DESCRIPTION="Language bindings generator for Qt and KDE"
 
 PATCH_URI="
 	4.6.4-smokegen-libsmoke.patch
 "
 
 PKG_NAMES="smokegen smokegen-devel libsmokebase3 libsmokebase-devel"
+smokegen_REQUIRES="libsmokebase-devel"
 smokegen_CONTENTS="usr/bin/cygcppparser* usr/bin/smoke*.exe usr/lib/smokegen/
                    usr/share/doc/ usr/share/smokegen/"
 smokegen_devel_CONTENTS="usr/include/smokegen/ usr/lib/libsmokegen.*"
+libsmokebase3_CATEGORY="Libs"
+libsmokebase3_SUMMARY="SMOKE base API"
 libsmokebase3_CONTENTS="usr/bin/cygsmokebase-3.dll"
+libsmokebase_devel_CATEGORY="Libs"
+libsmokebase_devel_SUMMARY="SMOKE base API"
 libsmokebase_devel_CONTENTS="usr/include/smoke.h usr/lib/libsmokebase.* usr/share/smoke/"
 PKG_IGNORE="usr/lib/libcppparser.*"

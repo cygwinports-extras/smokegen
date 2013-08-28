@@ -1,4 +1,0 @@
-category: KDE
-requires: libgcc1 libQtCore4 libQtXml4 libsmokebase3 libsmokebase-devel libstdc++6
-sdesc: "SMOKE API generator"
-ldesc: "Language bindings generator for Qt and KDE"
