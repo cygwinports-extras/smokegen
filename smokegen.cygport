@@ -1,7 +1,7 @@
 inherit kde4
 
 NAME="smokegen"
-VERSION=4.10.5
+VERSION=4.11.5
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="SMOKE API generator"
