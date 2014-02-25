@@ -1,0 +1,33 @@
+--- origsrc/smokegen-4.11.5/generators/smoke/helpers.cpp	2014-01-02 13:28:47.000000000 -0600
++++ src/smokegen-4.11.5/generators/smoke/helpers.cpp	2014-02-24 22:00:14.619379000 -0600
+@@ -100,7 +100,7 @@ bool operator==(const EnumMember& lhs, c
+ 
+ static Smoke* loadSmokeModule(QString moduleName) {
+     QLibrary lib;
+-#if defined(Q_OS_WIN32)
++#if defined(Q_OS_WIN32) || defined(Q_OS_CYGWIN)
+     QString libName = QLatin1String("smoke") + moduleName;
+ #else
+     QString libName = QLatin1String("libsmoke") + moduleName;
+@@ -116,7 +116,7 @@ static Smoke* loadSmokeModule(QString mo
+ 
+     // use the plain library name if everything else fails
+     if (!lib.load()) {
+-        lib.setFileName(libName);
++        lib.setFileNameAndVersion(libName, 3);
+     }
+ 
+     lib.load();
+--- origsrc/smokegen-4.11.5/smokeapi/main.cpp	2014-02-24 22:11:27.120843900 -0600
++++ src/smokegen-4.11.5/smokeapi/main.cpp	2014-02-24 21:52:20.963287400 -0600
+@@ -38,8 +38,8 @@ static QRegExp targetPattern;
+ 
+ static Smoke* 
+ loadSmokeModule(QString moduleName) {
+-    QFileInfo file(QString("libsmoke") + moduleName);
+-    QLibrary lib(file.filePath());
++    QFileInfo file(QString("smoke") + moduleName);
++    QLibrary lib(file.filePath(), 3);
+ 
+     QString init_name = "init_" + moduleName + "_Smoke";
+     InitSmokeFn init = (InitSmokeFn) lib.resolve(init_name.toLatin1());
